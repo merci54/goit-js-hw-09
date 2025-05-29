@@ -15,8 +15,8 @@ const populateInputs = () => {
     const data = JSON.parse(localStorage.getItem(formStorageKey));
 
     if (data) {
-        emailElement.value = data.email || "";
-        messageElement.value = data.message || "";
+        emailElement.value = data.email.trim() || "";
+        messageElement.value = data.message.trim() || "";
 
     }
 }
@@ -26,8 +26,8 @@ populateInputs()
 
 const handleInput = e => {
 
-    formData.email = emailElement.value;
-    formData.message = messageElement.value;
+    formData.email = emailElement.value.trim();
+    formData.message = messageElement.value.trim();
 
     localStorage.setItem(formStorageKey, JSON.stringify(formData));
 
@@ -42,8 +42,8 @@ const handleSubmit = e => {
 
     }
     console.log({
-        email: e.target.elements.email.value,
-        message: e.target.elements.message.value
+        email: e.target.elements.email.value.trim(),
+        message: e.target.elements.message.value.trim()
     });
 
     form.reset();
