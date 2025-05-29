@@ -43,3 +43,7 @@
     letter-spacing: 0.04em;
     color: #fff;
 }
+
+.feedback-form button:hover {
+    background: #6c8cff;
+}
